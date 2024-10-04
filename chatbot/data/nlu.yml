@@ -1,0 +1,226 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+    
+- intent: ask_year
+  examples: |
+    - What year is it?
+    - Can you tell me the current year?
+    - What's the year now?
+    - Do you know the current year?
+    - Which year is it?
+
+- intent: ask_weather
+  examples: |
+    - What's the weather like?
+    - Tell me the weather forecast
+    - How's the weather today?
+    - Is it going to rain?
+    - Will it be sunny tomorrow?
+
+- intent: get_time
+  examples: |
+    - What's the current time in [New York](city)
+    - Current time [NYC](city)
+    - What time is in [NY](city)
+    - Tell me the time in [New York City](city)
+    - What time is it in [Tbilisi](city)
+    - What's the time in [Berlin](city)
+    - What hour is in [Moscow](city)
+    - Current time in [Hong Kong](city)
+    - Time in [Kiev](city)
+    - [Paris](city) time
+
+
+- intent: travel
+  examples: |
+    - I want to go from [Tbilisi]{"entity": "city", "role": "location"} to [Las Vegas]{"entity": "city", "role": "destination"}
+    - I am going from [Rustavi]{"entity": "city", "role": "location"} to [Tbilisi]{"entity": "city", "role": "destination"}
+    - Order me a ticket from [Moscow]{"entity": "city", "role": "location"} to [New York]{"entity": "city", "role": "destination"}
+
+- intent: tell_about_friend
+  examples: |
+    - My friend [Giorgi]{"entity": "name", "group": "1"} is [20]{"entity": "age", "group": "1"} years old, but [David]{"entity": "name", "group": "2"} is [24]{"entity": "age", "group": "2"} years old
+
+- intent: tell_favorite_food
+  examples: |
+    - My favorite food is [pizza](food)
+    - I love [Khatchapuri](food)
+    - I love [Mchadikvelit](food) the most
+    - I really like [burger](food)
+    - [lobiani](food) is my favorite food
+
+- intent: get_favorite_food
+  examples: |
+    - Tell me my favorite food
+    - What food do I love the most
+    - What's my favorite food
+    - What is my favorite food
+    - Which food do I like
+    - Which food do I like the most
+
+- intent: tell_hobby
+  examples: |
+    - My hobby is [painting](hobby)
+    - I love [reading](hobby)
+    - I enjoy [swimming](hobby)
+    - [coding](hobby) is my favorite hobby
+    - I really like [hiking](hobby)
+
+- intent: get_favorite_hobby
+  examples: |
+    - Tell me my favorite hobby
+    - What is my favorite hobby
+    - What's my hobby
+    - What hobby do I love the most
+    - Which hobby do I like
+
+- intent: tell_color
+  examples: |
+    - My favorite color is [blue](color)
+    - I love the color [red](color)
+    - I really like [green](color)
+    - [yellow](color) is my favorite color
+    - My preferred color is [black](color)
+
+- intent: get_favorite_color
+  examples: |
+    - Tell me my favorite color
+    - What is my favorite color
+    - What's my color
+    - What color do I love the most
+    - Which color do I like
+    
+
+- intent: ask_sum
+  examples: |
+    - How much is [5]{"entity": "number", "role": "add1"} + [5]{"entity": "number", "role": "add2"}
+    - What's the sum of [10]{"entity": "number", "role": "add1"} + [12]{"entity": "number", "role": "add2"}
+    - What is [8]{"entity": "number", "role": "add1"} + [2]{"entity": "number", "role": "add2"}
+    - [24]{"entity": "number", "role": "add1"} + [9]{"entity": "number", "role": "add2"}
+    - Add together[6]{"entity": "number", "role": "add1"} + [3]{"entity": "number", "role": "add2"}
+    
+
+- intent: ask_joke
+  examples: |
+    - Tell me a joke
+    - I want to hear something funny
+    - Make me laugh
+    - Do you know any jokes?
+    - Can you tell me a joke?
+    - Say something funny
+
+- intent: ask_fun_fact
+  examples: |
+    - Give me a fun fact
+    - Can you share a fun fact?
+    - Tell me an interesting fact
+    - I want to know a fun fact
+    - Do you know any fun facts?
+    - Tell me something cool
+
+- intent: ask_motivation
+  examples: |
+    - I need some motivation
+    - Can you motivate me?
+    - Tell me something inspiring
+    - Say something motivational
+    - Give me a motivational phrase
+    - Inspire me
+
+
+- synonym: New York
+  examples: |
+    - NYC
+    - New York 
+    - New York City
+    - NY

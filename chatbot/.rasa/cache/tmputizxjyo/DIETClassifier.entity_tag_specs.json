@@ -1,0 +1,88 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-age",
+      "2": "I-age",
+      "3": "L-age",
+      "4": "U-age",
+      "5": "B-city",
+      "6": "I-city",
+      "7": "L-city",
+      "8": "U-city",
+      "9": "B-name",
+      "10": "I-name",
+      "11": "L-name",
+      "12": "U-name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-age": 1,
+      "I-age": 2,
+      "L-age": 3,
+      "U-age": 4,
+      "B-city": 5,
+      "I-city": 6,
+      "L-city": 7,
+      "U-city": 8,
+      "B-name": 9,
+      "I-name": 10,
+      "L-name": 11,
+      "U-name": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  },
+  {
+    "tag_name": "role",
+    "ids_to_tags": {
+      "1": "B-destination",
+      "2": "I-destination",
+      "3": "L-destination",
+      "4": "U-destination",
+      "5": "B-location",
+      "6": "I-location",
+      "7": "L-location",
+      "8": "U-location",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-destination": 1,
+      "I-destination": 2,
+      "L-destination": 3,
+      "U-destination": 4,
+      "B-location": 5,
+      "I-location": 6,
+      "L-location": 7,
+      "U-location": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  },
+  {
+    "tag_name": "group",
+    "ids_to_tags": {
+      "1": "B-1",
+      "2": "I-1",
+      "3": "L-1",
+      "4": "U-1",
+      "5": "B-2",
+      "6": "I-2",
+      "7": "L-2",
+      "8": "U-2",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-1": 1,
+      "I-1": 2,
+      "L-1": 3,
+      "U-1": 4,
+      "B-2": 5,
+      "I-2": 6,
+      "L-2": 7,
+      "U-2": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

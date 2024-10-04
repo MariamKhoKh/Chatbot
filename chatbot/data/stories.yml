@@ -1,0 +1,107 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: weather path
+  steps:
+  - intent: ask_weather
+  - action: utter_weather
+
+- story: year path
+  steps:
+  - intent: ask_year
+  - action: utter_year
+
+
+- story: Knows favorite food
+  steps:
+    - intent: get_favorite_food
+    - slot_was_set:
+        - favorite_food
+    - action: utter_tell_food
+
+- story: Doesn't know favorite food
+  steps:
+    - intent: get_favorite_food
+    - slot_was_set:
+        - favorite_food: null
+    - action: utter_dont_know
+
+- story: Knows favorite hobby
+  steps:
+    - intent: get_favorite_hobby
+    - slot_was_set:
+        - favorite_hobby
+    - action: utter_tell_hobby
+
+- story: Doesn't know favorite hobby
+  steps:
+    - intent: get_favorite_hobby
+    - slot_was_set:
+        - favorite_hobby: null
+    - action: utter_dont_know_hobby
+
+- story: Knows favorite color
+  steps:
+    - intent: get_favorite_color
+    - slot_was_set:
+        - favorite_color
+    - action: utter_tell_color
+
+- story: Doesn't know favorite color
+  steps:
+    - intent: get_favorite_color
+    - slot_was_set:
+        - favorite_color: null
+    - action: utter_dont_know_color
+
+
+- story: ask_sum
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_sum
+    - action: action_tell_sum
+
+- story: user asks for a joke
+  steps:
+    - intent: ask_joke
+    - action: action_tell_joke
+
+- story: user asks for a fun fact
+  steps:
+    - intent: ask_fun_fact
+    - action: action_tell_fun_fact
+
+- story: user asks for motivation
+  steps:
+    - intent: ask_motivation
+    - action: action_tell_motivation
+

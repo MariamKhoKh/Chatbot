@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}
+Chat
+{% endblock %}
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(135deg, #1a1a1a, #333);
+        color: #3498db;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .chat-box {
+        height: 400px;
+        overflow-y: scroll;
+        background-color: #222;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+    .message {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .bot-message {
+        background-color: #3498db;
+        color: white;
+    }
+    .user-message {
+        background-color: #555;
+        color: white;
+        text-align: right;
+    }
+       {
+        background-color: #3498db;
+        border: none;
+        color: white;
+    }
+
+
+    .btn.custom-blue:hover {
+        background-color: #2980b9;
+    }
+
+    .btn.custom-blue:focus {
+        background-color: #2980b9;
+        box-shadow: 0 0 3px rgba(52, 152, 219, 0.5);
+    }
+
+</style>
+
+
+<div class="container chat-container">
+    <h2 class="text-center">Chat with chatbot</h2>
+
+
+    <div class="chat-box" id="chatBox">
+    <div class="message bot-message">Hello! How can I help you today?</div>
+
+    {% if current_user.is_authenticated %}
+        {% for message in current_user.messages %}
+            {% if message.is_chatbot %}
+                <div class="message bot-message">
+                    {{ message.text }}
+                </div>
+            {% else %}
+                <div class="message user-message">
+                    {{ message.text }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
+
+
+
+ <form method="post">
+    {{ form.hidden_tag() }}
+    <div class="input-group">
+        {% if current_user.is_authenticated %}
+            <div class="col-10">
+                {{ form.user_input(class="form-control", placeholder="Type your message here...") }}
+            </div>
+            <div class="col-2">
+                {{ form.submit(class="btn btn-primary custom-blue w-100") }}
+            </div>
+        {% else %}
+            <input type="text" placeholder="Please, login to your account" disabled>
+        {% endif %}
+    </div>
+</form>
+
+</div>
+<script>
+    function scrollToLastMessage() {
+        var lastMessage = document.querySelector('.message:last-child');
+        if (lastMessage) {
+            lastMessage.scrollIntoView({ block: "end", behavior: "instant" });
+        }
+    }
+
+    window.onload = function() {
+        scrollToLastMessage();
+    };
+
+    document.querySelector('form').onsubmit = function() {
+        setTimeout(scrollToLastMessage, 400);
+    };
+</script>
+
+
+{% endblock %}
+

@@ -1,0 +1,249 @@
+body {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #d4af37;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #d4af37;
+    text-align: center;
+}
+
+p {
+    color: #ddd;
+}
+
+a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f4c404;
+}
+
+
+.navbar {
+    background-color: #000;
+    padding: 20px;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #d4af37 !important;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
+.btn-login {
+    background: none;
+    border: none;
+    color: #d4af37;
+    padding: 0;
+    margin-left: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn-login:hover {
+    color: #f4c404;
+}
+
+
+.hero-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(135deg, #1c1c1c, #2f2f2f);
+}
+
+.hero-content h1 {
+    color: #3498db;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #ecf0f1;
+    font-size: 1.2rem;
+}
+
+.hero-button {
+    margin-top: 20px;
+    background-color: #d4af37;
+    color: black;
+    padding: 10px 30px;
+    font-size: 20px;
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: rgba(244, 196, 4, 0.712);
+    color: #fff;
+}
+
+
+.blog-container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ddd;
+}
+
+.blog-post {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.blog-post:hover {
+    background-color: #555;
+    transform: scale(1.02);
+}
+
+.blog-post h2 a {
+    color: #3498db;
+}
+
+.blog-post p {
+    color: white;
+}
+
+.blog-post p a {
+    color: #d4af37;
+}
+
+
+.chat-container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
+}
+
+.chat-box {
+    height: 400px;
+    overflow-y: auto;
+    background-color: #222;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.user-message {
+    background-color: #d4af37;
+    color: #000;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: #444;
+    color: #d4af37;
+}
+
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #444;
+    color: #d4af37;
+}
+
+.input-group input:focus {
+    outline: none;
+}
+
+.input-group button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.input-group button:hover {
+    background-color: #3eaffb;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    margin-top: auto;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+ .about-container {
+        flex: 1;
+        padding: 50px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-section {
+        background-color: #2f2f2f;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 800px;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn-logout {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+.btn-primary {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}

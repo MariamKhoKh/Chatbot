@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+post
+{% endblock %}
+
+{% block content %}
+  <style>
+      h1 {
+        color: #d4af37;
+        text-align: center;
+      }
+
+      p {
+        color: #ddd;
+      }
+
+      .btn-back {
+        background-color: #3498db;
+        color: #000;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+      }
+
+      .btn-back:hover {
+        background-color: #d4af37;
+      }
+    </style>
+    <div class="container blog-container">
+      <h1>Blog Post #{{ blog_id }}</h1>
+      <p>This is the content for blog post with id {{ blog_id }}.</p>
+      <a href="/blog" class="btn-back">Back to Blog</a>
+    </div>
+{% endblock %}
+
