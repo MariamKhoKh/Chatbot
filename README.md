@@ -59,7 +59,7 @@ The application will be available at http://127.0.0.1:5000/ in your browser.
 
 ## Example Conversation
 
-```vbnet
+```bash
 User: Tell me a joke.
 Bot: Why don't scientists trust atoms? Because they make up everything!
 
