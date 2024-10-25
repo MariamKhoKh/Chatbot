@@ -1,226 +1,198 @@
 version: "3.1"
+#rasa interactive
+#rasa visualize
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - hey there
+      - hello there
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+  - intent: goodbye
+    examples: |
+      - have a nice day!
+      - take care!
+      - have fun!
+      - adios!
+      - goodbye!
+      - bye-bye!
+      - see you later
+      
+      version: "3.1"
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    
-    
-- intent: ask_year
-  examples: |
-    - What year is it?
-    - Can you tell me the current year?
-    - What's the year now?
-    - Do you know the current year?
-    - Which year is it?
-
-- intent: ask_weather
-  examples: |
-    - What's the weather like?
-    - Tell me the weather forecast
-    - How's the weather today?
-    - Is it going to rain?
-    - Will it be sunny tomorrow?
-
-- intent: get_time
-  examples: |
-    - What's the current time in [New York](city)
-    - Current time [NYC](city)
-    - What time is in [NY](city)
-    - Tell me the time in [New York City](city)
-    - What time is it in [Tbilisi](city)
-    - What's the time in [Berlin](city)
-    - What hour is in [Moscow](city)
-    - Current time in [Hong Kong](city)
-    - Time in [Kiev](city)
-    - [Paris](city) time
+  - intent: thank
+    examples: |
+      - thanks
+      - thank you
+      - thanks a lot
+      - thank you very much
+      - many thanks
+      - much appreciated
+      - I appreciate it
+      - thank you so much
+      - thanks a bunch
+      - thank you kindly
 
 
-- intent: travel
-  examples: |
-    - I want to go from [Tbilisi]{"entity": "city", "role": "location"} to [Las Vegas]{"entity": "city", "role": "destination"}
-    - I am going from [Rustavi]{"entity": "city", "role": "location"} to [Tbilisi]{"entity": "city", "role": "destination"}
-    - Order me a ticket from [Moscow]{"entity": "city", "role": "location"} to [New York]{"entity": "city", "role": "destination"}
+  - intent: affirm
+    examples: |
+      - yes
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - ok
+      - okay
 
-- intent: tell_about_friend
-  examples: |
-    - My friend [Giorgi]{"entity": "name", "group": "1"} is [20]{"entity": "age", "group": "1"} years old, but [David]{"entity": "name", "group": "2"} is [24]{"entity": "age", "group": "2"} years old
+  - intent: deny
+    examples: |
+      - no
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
 
-- intent: tell_favorite_food
-  examples: |
-    - My favorite food is [pizza](food)
-    - I love [Khatchapuri](food)
-    - I love [Mchadikvelit](food) the most
-    - I really like [burger](food)
-    - [lobiani](food) is my favorite food
+  - intent: book_room
+    examples: |
+      - I want to book a room
+      - I want to book a room for my stay
+      - I would like to book a room
+      - can you book a room?
+      - book a room for me
+      - need a room
+      - book the room
+      - book room for my stay
 
-- intent: get_favorite_food
-  examples: |
-    - Tell me my favorite food
-    - What food do I love the most
-    - What's my favorite food
-    - What is my favorite food
-    - Which food do I like
-    - Which food do I like the most
+  - intent: book_number_room
+    examples: |
+      - I want to book (2)[number] rooms for my stay
+      - I would like to book 1 room
+      - book 2 rooms for me
+      - need 1 room
+      - book 1 room
+      - book 2 rooms
 
-- intent: tell_hobby
-  examples: |
-    - My hobby is [painting](hobby)
-    - I love [reading](hobby)
-    - I enjoy [swimming](hobby)
-    - [coding](hobby) is my favorite hobby
-    - I really like [hiking](hobby)
+  - intent: check_in_time
+    examples: |
+      - I want to check in on December 12th
+      - December 12th works for me
+      - Can I check in on the 12th?
+      - December 12th
+      - 12th of December is good for check-in
+      - today
+      - tomorrow
+      - day after tomorrow
 
-- intent: get_favorite_hobby
-  examples: |
-    - Tell me my favorite hobby
-    - What is my favorite hobby
-    - What's my hobby
-    - What hobby do I love the most
-    - Which hobby do I like
+  - intent: check_out_time
+    examples: |
+      - I'll be checking out on December 15th
+      - My check-out date is the 15th of December
+      - I plan to leave on the 15th
+      - I'll check out on December 15th
+      - I'm leaving on the 15th
+      - December 15th is my check-out date
+      - I'll be checking out on the    
+      - tomorrow
+      - day after tomorrow
 
-- intent: tell_color
-  examples: |
-    - My favorite color is [blue](color)
-    - I love the color [red](color)
-    - I really like [green](color)
-    - [yellow](color) is my favorite color
-    - My preferred color is [black](color)
+  - intent: room_type
+    examples: |
+      - single room
+      - double room
+      - I'd like a family room
+      - deluxe room
+      - room with a view
+      - twin room
+          
 
-- intent: get_favorite_color
-  examples: |
-    - Tell me my favorite color
-    - What is my favorite color
-    - What's my color
-    - What color do I love the most
-    - Which color do I like
-    
+  - intent: clean_room
+    examples: |
+      - Can you ask for someone to clean the room?
+      - I would like to request for room cleaning
+      - please send someone to clean my room
+      - need someone to clean the room
+      - request room cleaning service
+      - my room needs to be cleaned
 
-- intent: ask_sum
-  examples: |
-    - How much is [5]{"entity": "number", "role": "add1"} + [5]{"entity": "number", "role": "add2"}
-    - What's the sum of [10]{"entity": "number", "role": "add1"} + [12]{"entity": "number", "role": "add2"}
-    - What is [8]{"entity": "number", "role": "add1"} + [2]{"entity": "number", "role": "add2"}
-    - [24]{"entity": "number", "role": "add1"} + [9]{"entity": "number", "role": "add2"}
-    - Add together[6]{"entity": "number", "role": "add1"} + [3]{"entity": "number", "role": "add2"}
-    
+  - intent: clean_room_now
+    examples: |
+      - urgently
+      - now
+      - send someone right now
+      - required now
+      - needed now
+      - it is urgent
+      - as soon as possible
 
-- intent: ask_joke
-  examples: |
-    - Tell me a joke
-    - I want to hear something funny
-    - Make me laugh
-    - Do you know any jokes?
-    - Can you tell me a joke?
-    - Say something funny
+  - intent: clean_room_relative
+    examples: |
+      - could you send someone after 2 hours?
+      - send someone after 3 hours
+      - schedule it after 5 hours
+      - please send someone in 2 hours
+      - send someone around 2 hours later
 
-- intent: ask_fun_fact
-  examples: |
-    - Give me a fun fact
-    - Can you share a fun fact?
-    - Tell me an interesting fact
-    - I want to know a fun fact
-    - Do you know any fun facts?
-    - Tell me something cool
+  - intent: faq_check_in_time
+    examples: |
+      - what are your check-in timings?
+      - when can I check in?
+      - check in time
+      - tell me your check-in timings
+      - when check in?
+      - what is the check-in time?
 
-- intent: ask_motivation
-  examples: |
-    - I need some motivation
-    - Can you motivate me?
-    - Tell me something inspiring
-    - Say something motivational
-    - Give me a motivational phrase
-    - Inspire me
+  - intent: faq_check_out_time
+    examples: |
+      - what are your check-out timings?
+      - check out time
+      - tell me your check-out timings
+      - when check out?
+      - what is the check-out time?
 
+  - intent: faq_cancel_reservation
+    examples: |
+      - I want to cancel my reservation
+      - cancel my reservation
+      - can you cancel my reservation?
+      - how do I cancel my reservation?
 
-- synonym: New York
-  examples: |
-    - NYC
-    - New York 
-    - New York City
-    - NY
+  - intent: faq_cancellation_policy
+    examples: |
+      - what is your cancellation policy?
+      - tell me about your cancellation policy
+      - I want to know about your cancellation policy
+
+  - intent: faq_have_restaurant
+    examples: |
+      - does the hotel have a restaurant?
+      - is there a restaurant in the hotel?
+      - can you tell me about the restaurant?
+      - are there restaurants in the hotel?
+      - tell me about the restaurant
+
+  - intent: faq_breakfast_avail
+    examples: |
+      - does the hotel offer breakfast?
+      - is breakfast available?
+      - do you serve breakfast?
+      - can I get breakfast here?
+
+  - intent: faq_breakfast_time
+    examples: |
+      - what are the breakfast timings?
+      - tell me about breakfast timings
+      - when is breakfast served?
+      - what is the time for breakfast?
+
+  - intent: faq_restaurant_time
+    examples: |
+      - what are the timings of the restaurant?
+      - restaurant open timings
+      - till when is the restaurant open?
+      - can you share the restaurant timings?

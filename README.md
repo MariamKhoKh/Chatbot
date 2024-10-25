@@ -1,15 +1,19 @@
-# Basic Chatbot for Jokes, Fun Facts, and Motivation
+# Hotel Assistant Chatbot Web Application with Rasa and Flask
 
-**Project Name**: Fun Bot
 
-**Description**: This is a simple chatbot built using Rasa library. The bot provides users with jokes, fun facts, and motivational phrases through a user-friendly web interface.
+**Description**: 
+This repository contains a web-based chatbot application that serves as a **Hotel Assistant**. The chatbot uses 
+**Flask** for the web interface and **Rasa** for natural language processing (NLP) and conversation management. 
+The bot can interact with users, handling multiple responses to a single input in a conversational interface, 
+providing hotel-related assistance.
 
 ## Features
 
-- Provides jokes, fun facts, and motivational phrases.
-- NLP capabilities powered by Rasa.
+- Hotel-related conversational assistant, providing booking information and answers to the FAQs
+- Persistent user login and message history with Flask and SQLAlchemy
+- Integration with Rasa to handle natural language responses
 - User registration system using SQLAlchemy (prevents duplicate registrations).
-
+- Sample pages: Home, About, Blog, Chat, Login, and Registration
 
 ## Usage:
 
@@ -58,18 +62,14 @@ The application will be available at http://127.0.0.1:5000/ in your browser.
 - Now, navigate to http://127.0.0.1:5000/ in your browser to access the chatbot
 
 ## Example Conversation
+<div style="display: flex; flex-wrap: wrap; gap: 10px;"> 
+<img src="/imgs/1.jpg" alt="Example Conversation 1" width="200"> 
+<img src="/imgs/2.jpg" alt="Example Conversation 2" width="200"> 
+<img src="/imgs/3.jpg" alt="Example Conversation 3" width="200"> 
+<img src="/imgs/4.jpg" alt="Example Conversation 4" width="200"> 
+<img src="/imgs/5.jpg" alt="Example Conversation 5" width="200"> </div>
 
-```
-User: Tell me a joke.
-Bot: Why don't scientists trust atoms? Because they make up everything!
 
-User: Share a fun fact.
-Bot: Did you know? Bananas are berries, but strawberries aren't!
-
-User: I need motivation.
-Bot: The only way to do great work is to love what you do. – Steve Jobs
-```
 
 ## Customization
-
-- To expand chatbot capabilities, add more intents, entities, slots and actions in folder 'chatbot'
+- To expand chatbot capabilities, add more intents, entities, slots, responses and actions in folder 'chatbot'

@@ -43,30 +43,34 @@ def chat():
         }
 
         try:
+            # Send message to Rasa server
             response = requests.post(f"{RASA_LINK}/webhooks/rest/webhook",
                                      data=json.dumps(data),
                                      headers={'Content-Type': 'application/json'})
 
             if response.status_code == 200:
-                new_message = Message(
+                # Save the user's message to the database
+                user_message = Message(
                     text=form.user_input.data,
                     sent_at=datetime.now(),
                     user_id=current_user.user_id,
                     is_chatbot=False
                 )
-                db.session.add(new_message)
+                db.session.add(user_message)
 
-                bot_response = response.json()[0]["text"]
-                bot_message = Message(
-                    text=bot_response,
-                    sent_at=datetime.now(),
-                    user_id=current_user.user_id,
-                    is_chatbot=True
-                )
-                db.session.add(bot_message)
+                # Loop through all Rasa responses and save them
+                for bot_reply in response.json():
+                    bot_message = Message(
+                        text=bot_reply["text"],
+                        sent_at=datetime.now(),
+                        user_id=current_user.user_id,
+                        is_chatbot=True
+                    )
+                    db.session.add(bot_message)
 
                 db.session.commit()
 
+                # Clear the form input after processing
                 form.user_input.data = ''
                 return redirect(url_for("chat"))
 

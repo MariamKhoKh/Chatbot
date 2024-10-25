@@ -3,134 +3,104 @@ version: "3.1"
 intents:
   - greet
   - goodbye
+  - thank
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - ask_year
-  - ask_weather
-  - get_time
-  - travel
-  - tell_about_friend
-  - tell_favorite_food
-  - get_favorite_food
-  - tell_hobby
-  - get_favorite_hobby
-  - tell_color
-  - get_favorite_color
-  - ask_sum
-  - ask_joke
-  - ask_fun_fact
-  - ask_motivation
-
+  - book_room
+  - book_number_room
+  - check_in_time
+  - check_out_time
+  - clean_room
+  - clean_room_now
+  - clean_room_relative
+  - faq_check_in_time
+  - faq_check_out_time
+  - room_type
+  - faq_cancel_reservation
+  - faq_cancellation_policy
+  - faq_have_restaurant
+  - faq_breakfast_avail
+  - faq_breakfast_time
+  - faq_restaurant_time
 
 entities:
-  - city
-  - name
-  - age
-  - food
-  - hobby
-  - color
   - number
-
-actions:
-  - action_tell_sum
-  - action_tell_joke
-  - action_tell_fun_fact
-  - action_tell_motivation
+  - room_type
+  - check_in_date
+  - check_out_date
 
 slots:
-  favorite_food:
+  number_of_rooms:
     type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: food
-        intent: tell_favorite_food
-
-  favorite_hobby:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: hobby
-        intent: tell_hobby
-
-  favorite_color:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: color
-        intent: tell_color
-
-  addend_1:
-    type: float
-    mappings:
-      - type : from_entity
-        entity: number
-        role: add1
-  addend_2:
-    type: float
     mappings:
       - type: from_entity
         entity: number
-        role: add2
+  room_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: room_type
+  check_in_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: check_in_date
+  check_out_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: check_out_date
+  clean_room_time:
+    type: text
+    mappings:
+      - type: from_text
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+    - text: "Hello! How can I assist you today?"
+  utter_ask_number_of_rooms:
+    - text: "How many rooms would you like to book?"
+  utter_ask_check_in_date:
+    - text: "When would you like to check in?"
+  utter_ask_check_out_date:
+    - text: "When would you like to check out?"
+  utter_ask_room_type:
+    - text: "What type of room would you like to book?"
+  utter_is_that_all:
+    - text: "Is there anything else I can help you with?"
+  utter_anything_else:
+    - text: "Do you need help with anything else?"
   utter_goodbye:
-  - text: "Bye"
+    - text: "Have a great day."
+  utter_welcome:
+    - text: "You're welcome"
+  utter_deny_message:
+    - text: "Let me know if you need anything else."
+  utter_clean_room:
+    - text: "Would you like to clean your room now or at a specific time?"
+  utter_clean_room_now:
+    - text: "Your room will be cleaned now."
+  utter_clean_room_relative:
+    - text: "Your room will be cleaned at the requested time."
+  utter_check_in_time:
+    - text: "The check-in time is 2:00 PM."
+  utter_check_out_time:
+    - text: "The check-out time is 11:00 AM."
+  utter_cancel_reservation:
+    - text: "You can cancel your reservation by contacting the front desk or visiting our website."
+  utter_cancellation_policy:
+    - text: "Our cancellation policy allows free cancellations up to 24 hours before check-in."
+  utter_have_restaurant:
+    - text: "Yes, we have a restaurant available for guests."
+  utter_breakfast_avail:
+    - text: "Yes, breakfast is available."
+  utter_breakfast_time:
+    - text: "Breakfast is served from 7:00 AM to 10:00 AM."
+  utter_restaurant_time:
+    - text: "The restaurant is open from 12:00 PM to 10:00 PM."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-  utter_year:
-    - text: "The current year is 2024."
-
-  utter_weather:
-  - text: "I'm not able to provide weather updates right now"
-
-  utter_tell_food:
-    - text: "Your favorite food is {favorite_food}"
-
-  utter_dont_know:
-    - text: "You have not told me your favorite food"
-
-  utter_tell_hobby:
-    - text: "Your favorite hobby is {favorite_hobby}"
-
-  utter_dont_know_hobby:
-    - text: "You have not told me your favorite hobby"
-
-  utter_tell_color:
-     - text: "Your favorite color is {favorite_color}"
-
-  utter_dont_know_color:
-    - text: "You have not told me your favorite color"
-
-  utter_joke:
-    - text: "Why don't skeletons fight each other? Because they don't have the guts!"
-
-  utter_fun_fact:
-    - text: "Did you know? Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!"
-
-  utter_motivation:
-    - text: "Believe in yourself, push your limits, and do whatever it takes to conquer your goals. You got this!"
-
+actions:
+  - action_clean_room
 
 session_config:
   session_expiration_time: 60
