@@ -1,7 +1,8 @@
-# Hotel Assistant Chatbot Web Application with Rasa and Flask
+# Hotel Assistant Chatbot
 
 
 **Description**: 
+
 This repository contains a web-based chatbot application that serves as a **Hotel Assistant**. The chatbot uses 
 **Flask** for the web interface and **Rasa** for natural language processing (NLP) and conversation management. 
 The bot can interact with users, handling multiple responses to a single input in a conversational interface, 
